@@ -2,8 +2,6 @@
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 ## Writeup for Project
-
-
 ---
 
 **Advanced Lane Finding Project**
@@ -43,9 +41,7 @@ I start by preparing "object points", which will be the (x, y, z) coordinates of
 I used the OpenCV functions **findChessboardCorners** and **drawChessboardCorners** to identify the locations of corners on a chessboard photos in **camera_cal** folder taken from different angles.
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result:
-
 ![alt text][image1]
-
 ![alt text][image2]
 
 All output images are in [cameraCalibrationOutput.](output_images/1.camera_cal_Output)
@@ -62,9 +58,7 @@ Applied a distortion correction to raw images placed in folder **test_images**.
 
 The code is in **7th** cell of [Advanced-Lane-Lines.ipynb](Advanced-Lane-Lines.ipynb).
 ![alt text][image3]
-
 ![alt text][image4]
-
 All output images are in [testImagesOutput.](output_images/2.test_images_Output)
 
 
@@ -87,11 +81,8 @@ I used a combination of color and gradient thresholds to generate a binary image
    - Created a combined binary threshold based on the above three mentioned binary thresholds.
 
 Here's an example of my output for this step.
-
 ![alt text][image5]
-
 ![alt text][image6]
-
 All output images are in [binaryThresholdOutput.](output_images/4.binary_thresholds_Output)
 
 
@@ -109,9 +100,7 @@ The code for my perspective transform is in **9th code** cell in  [Advanced-Lane
     ```
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
-
 ![alt text][image7]
-
 All output images are in [birdsEyeViewOutput.](output_images/3.birds_eye_view_Output)
 
 
@@ -154,24 +143,19 @@ radius_right_curve = ((1 + (2*right_lane_fit_curvature[0]*np.max(left_y) + right
 ```
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
-
 Shown in example above.
-
 ---
 
 ### Pipeline (video)
-
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
 - Output for : **project_video.mp4**
-
 
 [![Watch the video](output_images/project_video_output_sample_img.png )](https://youtu.be/IXanFQSjAGU)
 
 - Output for : **challenge_video.mp4**
 
 [![Watch the video](output_images/challenge_video_ouput_sample_img.png )](https://youtu.be/Axt0_GvmV7g)
-
 ---
 
 ### Discussion
